@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 
@@ -12,6 +13,7 @@ import java.math.BigDecimal;
 @Table(name = "books")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 @ApiModel(description = "Book information")
 public class Book {
     @Id

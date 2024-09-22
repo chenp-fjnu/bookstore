@@ -83,3 +83,32 @@ curl http://localhost:8080/api/carts/1/checkout -H "Content-Type: application/js
 ```bash
 curl http://localhost:8080/api/carts/2/checkout -H "Content-Type: application/json"
 ```
+
+# Design
+
+## OpenAPI Specification
+### ShoppingCartController
+POST /api/carts
+
+GET /api/carts/{cartId}
+
+GET /api/carts/{cartId}/checkout
+
+### BookController
+GET /api/books
+
+POST /api/books
+
+## Domain Model
+* Book
+* ShoppingCartItem
+
+## Service
+* BookService
+* ShoppingCartService
+
+## Repository
+* BookRepository
+* ShoppingCartRepository
+
+

@@ -28,7 +28,6 @@ public class BookController {
     @ApiOperation("Add book to store")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "body", dataType = "Book", name = "book", value = "book information", required = true) })
-
     @PostMapping
     public Book addBook(@RequestBody Book book) {
         return bookService.addBook(book);
