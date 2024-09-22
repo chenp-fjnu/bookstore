@@ -18,11 +18,13 @@ public class BookController {
     public BookController(BookService bookService) {
         this.bookService = bookService;
     }
+    // Get all books in store
     @ApiOperation("Get all books in store")
     @GetMapping
     public List<Book> getAllBooks() {
         return bookService.getAllBooks();
     }
+    // Add book to store
     @ApiOperation("Add book to store")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "body", dataType = "Book", name = "book", value = "book information", required = true) })

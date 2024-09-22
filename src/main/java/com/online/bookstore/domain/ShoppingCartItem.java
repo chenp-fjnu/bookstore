@@ -2,11 +2,13 @@ package com.online.bookstore.domain;
 
 import io.swagger.annotations.ApiModelProperty;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Entity
 @Table(name = "cart_items")
 @Data
+@AllArgsConstructor
 public class ShoppingCartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

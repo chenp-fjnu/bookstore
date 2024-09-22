@@ -1,7 +1,6 @@
 package com.online.bookstore.controller;
 
 import com.online.bookstore.domain.ShoppingCartItem;
-import com.online.bookstore.service.BookService;
 import com.online.bookstore.service.ShoppingCartService;
 import io.swagger.annotations.*;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +18,7 @@ public class ShoppingCartController {
         this.cartService = cartService;
     }
 
+    // Get all items of specific cart
     @ApiOperation("Get all items of specific cart")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "path", dataType = "Long", name = "cartId", value = "id of cart", required = true) })
@@ -26,6 +26,8 @@ public class ShoppingCartController {
     public List<ShoppingCartItem> viewCart(@PathVariable("cartId") Long cartId) {
         return cartService.getCartItems(cartId);
     }
+
+    // Add item to specific cart
     @ApiOperation("Add item to specific cart")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "body", dataType = "ShoppingCartItem", name = "item", value = "item of cart", required = true) })
@@ -33,6 +35,8 @@ public class ShoppingCartController {
     public ShoppingCartItem addToCart(@RequestBody ShoppingCartItem item) {
         return cartService.addItemToCart(item);
     }
+
+    // Checkout for specific cart
     @ApiOperation("Checkout for specific cart")
     @ApiImplicitParams({
             @ApiImplicitParam(paramType = "path", dataType = "Long", name = "cartId", value = "id of cart", required = true) })

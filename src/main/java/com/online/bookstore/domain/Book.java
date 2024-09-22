@@ -3,6 +3,7 @@ package com.online.bookstore.domain;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -10,11 +11,12 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "books")
 @Data
+@AllArgsConstructor
 @ApiModel(description = "Book information")
 public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @ApiModelProperty(value ="primary key", notes="id of book", hidden = true)
+    @ApiModelProperty(value ="primary key", notes="id of book", hidden = true, required = false)
     private Long id;
     @ApiModelProperty(notes ="title of book", required = true)
     private String title;
@@ -24,4 +26,5 @@ public class Book {
     private BigDecimal price;
     @ApiModelProperty(notes ="category of book", required = true)
     private String category;
+
 }
